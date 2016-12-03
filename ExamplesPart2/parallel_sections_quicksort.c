@@ -11,13 +11,15 @@ int main(int argc, char *argv[]) {
     int arr[10] = {11,2,9,13,57,25,17,1,90,3};
 	int i;
 
+	double t_in = omp_get_wtime();
 	quicksort(arr,0,9,0);
-
+    double t_fin = omp_get_wtime();
 	printf("Array after sorting:\n");
 
-	for (i = 0; i <= 9; i++)
+	for (i = 0; i <= 9; i++) {
 		printf ("%d\t", arr[i]);
-
+	}
+    printf("\nWall clock time = %.7f sec\n", t_fin-t_in);
 }
 
 void quicksort (int a[], int lower, int upper, int depth) {
