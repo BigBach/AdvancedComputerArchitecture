@@ -34,10 +34,24 @@
 		<Unit filename="sources/codeblocks_environment.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="sources/convolution.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="sources/convolution.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="sources/imageUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="sources/imageUtilities.h" />
+		<Unit filename="sources/pixelMatrix.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="sources/pixelMatrix.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="tests/image1.pgm" />
 		<Unit filename="tests/image2.pgm" />
 		<Unit filename="tests/image3.pgm" />
