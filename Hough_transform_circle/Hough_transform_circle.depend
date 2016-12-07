@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1481105910 source:c:\project\advancedcomputerarchitecture\hough_transform_circle\sources\imageutilities.c
+	"imageUtilities.h"
+
+1481119132 c:\project\advancedcomputerarchitecture\hough_transform_circle\sources\imageutilities.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1481116969 source:c:\project\advancedcomputerarchitecture\hough_transform_circle\tests\imagetests.c
+	<stdio.h>
+	<stdlib.h>
+	"./../sources/imageUtilities.h"
+
