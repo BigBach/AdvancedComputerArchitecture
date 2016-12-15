@@ -1,12 +1,19 @@
 #ifndef CONVOLUTION_H_INCLUDED
 #define CONVOLUTION_H_INCLUDED
+#include "./pixelMatrix.h"
+#include <stdlib.h>
 
 typedef struct{
-    int *values;
+    double *values;
     int size;
 } Filter;
 
-PixelMatrix *convolution(int *, Filter *);
+Filter *newFilter(int);
+
+void freeFilter(Filter *);
+
+PixelMatrix *convolution(PixelMatrix *, Filter *);
+
 
 #endif // CONVOLUTION_H_INCLUDED
 

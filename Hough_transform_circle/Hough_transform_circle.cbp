@@ -13,7 +13,30 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/include/opencv" />
 				</Compiler>
+				<Linker>
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_calib3d2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_contrib2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_core2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_features2d2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_flann2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_gpu2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_highgui2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_imgproc2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_legacy2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_ml2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_nonfree2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_objdetect2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_ocl2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_photo2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_stitching2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_superres2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_ts2413.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_video2413.dll.a" />
+					<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/lib/libopencv_videostab2413.dll.a" />
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/lib" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Hough_transform_circle" prefix_auto="1" extension_auto="1" />
@@ -31,27 +54,23 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="sources/codeblocks_environment.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="sources/codeblocks_environment.h" />
 		<Unit filename="sources/convolution.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="sources/convolution.h">
-			<Option target="&lt;{~None~}&gt;" />
+		<Unit filename="sources/convolution.h" />
+		<Unit filename="sources/filters.c">
+			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="sources/filters.h" />
 		<Unit filename="sources/imageUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="sources/imageUtilities.h" />
 		<Unit filename="sources/pixelMatrix.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="sources/pixelMatrix.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="sources/pixelMatrix.h" />
 		<Unit filename="tests/image1.pgm" />
 		<Unit filename="tests/image2.pgm" />
 		<Unit filename="tests/image3.pgm" />

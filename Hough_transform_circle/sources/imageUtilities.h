@@ -22,7 +22,7 @@ Pgm* newPGM(int, int, int);
 Pgm* readPGM(char*);
 int writePGM(Pgm*, char*);
 void resetPGM(Pgm*);
-void freePGM(Pgm**);
+void freePGM(Pgm*);
 
 //---------------------------------------------------------//
 //----------------- Basic Functions for PGM ---------------//
