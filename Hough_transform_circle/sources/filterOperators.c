@@ -142,7 +142,7 @@ PixelMatrix *cannyOperator(PixelMatrix *inputMatrix, double lowThreshold, double
                 }
                 if ((xSucc < phaseMatrix->width))
                 {
-                    if(moduleValue <= moduleMatrix->values[yPrev * moduleMatrix->width + xPrev])
+                    if(moduleValue <= moduleMatrix->values[ySucc * moduleMatrix->width + xSucc])
                     {
                         cIsMax = 0;
                     }
@@ -163,7 +163,7 @@ PixelMatrix *cannyOperator(PixelMatrix *inputMatrix, double lowThreshold, double
                 }
                 if ((xSucc < phaseMatrix->width) && (ySucc >= 0))
                 {
-                    if(moduleValue <= moduleMatrix->values[yPrev * moduleMatrix->width + xPrev])
+                    if(moduleValue <= moduleMatrix->values[ySucc * moduleMatrix->width + xSucc])
                     {
                         cIsMax = 0;
                     }
@@ -184,7 +184,7 @@ PixelMatrix *cannyOperator(PixelMatrix *inputMatrix, double lowThreshold, double
                 }
                 if ((ySucc < phaseMatrix->height))
                 {
-                    if(moduleValue <= moduleMatrix->values[yPrev * moduleMatrix->width + xPrev])
+                    if(moduleValue <= moduleMatrix->values[ySucc * moduleMatrix->width + xSucc])
                     {
                         cIsMax = 0;
                     }
@@ -205,7 +205,7 @@ PixelMatrix *cannyOperator(PixelMatrix *inputMatrix, double lowThreshold, double
                 }
                 if ((xSucc < phaseMatrix->width) && (ySucc < phaseMatrix->height))
                 {
-                    if(moduleValue <= moduleMatrix->values[yPrev * moduleMatrix->width + xPrev])
+                    if(moduleValue <= moduleMatrix->values[ySucc * moduleMatrix->width + xSucc])
                     {
                         cIsMax = 0;
                     }

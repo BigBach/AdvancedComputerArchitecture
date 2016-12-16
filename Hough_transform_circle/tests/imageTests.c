@@ -111,9 +111,9 @@ int main(int argc, char** argv)
     filter->values[8] = 1;
 
 #ifdef CODEBLOCKS_ENVIRONMENT
-    Pgm *inputPgm = readPGM("./tests/image5.pgm");
+    Pgm *inputPgm = readPGM("./tests/plettro.pgm");
 #else
-    Pgm *inputPgm = readPGM("./image5.pgm");
+    Pgm *inputPgm = readPGM("./plettro.pgm");
 #endif // CODEBLOCKS_ENVIRONMENT
 
     PixelMatrix *inputPMatrix = newPixelMatrix(inputPgm->width,inputPgm->height,inputPgm->max_val);
@@ -154,7 +154,7 @@ int main(int argc, char** argv)
     freeFilter(filter);
     freePGM(inputPgm);
 
-    PixelMatrix *extendedInputMatrix = cannyOperator(inputPMatrix,120.0,140.0);
+    PixelMatrix *extendedInputMatrix = cannyOperator(inputPMatrix,100.0,180.0);
     DEBUG;
     CvMat *outExtended = cvCreateMat(extendedInputMatrix->height, extendedInputMatrix->width,CV_8UC3);
     DEBUG;
