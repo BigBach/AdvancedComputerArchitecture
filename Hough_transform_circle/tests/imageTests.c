@@ -111,9 +111,9 @@ int main(int argc, char** argv)
     filter->values[8] = 1;
 
 #ifdef CODEBLOCKS_ENVIRONMENT
-    Pgm *inputPgm = readPGM("./tests/image1.pgm");
+    Pgm *inputPgm = readPGM("./tests/image3.pgm");
 #else
-    Pgm *inputPgm = readPGM("./image1.pgm");
+    Pgm *inputPgm = readPGM("./image3.pgm");
 #endif // CODEBLOCKS_ENVIRONMENT
 
     PixelMatrix *inputPMatrix = newPixelMatrix(inputPgm->width,inputPgm->height,inputPgm->max_val);
@@ -130,14 +130,14 @@ int main(int argc, char** argv)
 
 
 
-    CvMat *out = cvCreateMat(pMatrix->width, pMatrix->height,CV_8UC3);
+    CvMat *out = cvCreateMat(pMatrix->height, pMatrix->width,CV_8UC3);
     int j, x;
     x = 0;
-    for(i = 0; i < pMatrix->width; i++)
+    for(i = 0; i < pMatrix->height; i++)
     {
-        for(j = 0; j < pMatrix->height; j++)
+        for(j = 0; j < pMatrix->width; j++)
         {
-            x = j * pMatrix->width + i;
+            x = i * pMatrix->width + j;
             CvScalar *scalar = (CvScalar*)malloc(1 * sizeof(CvScalar));
             scalar->val[0] = pMatrix->values[x];
             scalar->val[1] = pMatrix->values[x];
@@ -154,20 +154,20 @@ int main(int argc, char** argv)
     freeFilter(filter);
     freePGM(inputPgm);
 
-    PixelMatrix **extendedInputMatrix = cannyOperator(inputPMatrix,0.0,0.0);
+    PixelMatrix *extendedInputMatrix = cannyOperator(inputPMatrix,0.0,0.0);
     DEBUG;
-    CvMat *outExtended = cvCreateMat((*extendedInputMatrix)->width, (*extendedInputMatrix)->height,CV_8UC3);
+    CvMat *outExtended = cvCreateMat(extendedInputMatrix->height, extendedInputMatrix->width,CV_8UC3);
     DEBUG;
     x = 0;
-    for(i = 0; i < (*extendedInputMatrix)->width; i++)
+    for(i = 0; i < extendedInputMatrix->height; i++)
     {
-        for(j = 0; j < (*extendedInputMatrix)->height; j++)
+        for(j = 0; j < extendedInputMatrix->width; j++)
         {
-            x = j * (*extendedInputMatrix)->width + i;
+            x = i * extendedInputMatrix->width + j;
             CvScalar *scalar = (CvScalar*)malloc(1 * sizeof(CvScalar));
-            scalar->val[0] = (*extendedInputMatrix)->values[x];
-            scalar->val[1] = (*extendedInputMatrix)->values[x];
-            scalar->val[2] = (*extendedInputMatrix)->values[x];
+            scalar->val[0] = extendedInputMatrix->values[x];
+            scalar->val[1] = extendedInputMatrix->values[x];
+            scalar->val[2] = extendedInputMatrix->values[x];
             cvSet2D(outExtended, i, j, *scalar);
         }
     }
@@ -179,7 +179,7 @@ int main(int argc, char** argv)
 
 
     freePixelMatrix(inputPMatrix);
-    freePixelMatrix(*extendedInputMatrix);
+    freePixelMatrix(extendedInputMatrix);
 
     return 0;
 }
