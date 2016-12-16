@@ -1,7 +1,7 @@
 #include "filters.h"
 
 
-PixelMatrix *cannyOperator(PixelMatrix *inputMatrix, double lowThreshold, double highTreshold){
+PixelMatrix **cannyOperator(PixelMatrix *inputMatrix, double lowThreshold, double highTreshold){
     Filter *gFilter = newFilter(5);
     gFilter->values[0] = 2/159;
     gFilter->values[1] = 4/159;
@@ -30,5 +30,5 @@ PixelMatrix *cannyOperator(PixelMatrix *inputMatrix, double lowThreshold, double
     gFilter->values[24] = 2/159;
 
     PixelMatrix *inputMatrixExtended = extendsBorders(inputMatrix,2);
-    return inputMatrixExtended;
+    return &inputMatrixExtended;
 }

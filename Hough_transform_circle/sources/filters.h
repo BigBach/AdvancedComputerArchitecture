@@ -2,7 +2,7 @@
 #define FILTERS_H_INCLUDED
 #include "convolution.h"
 
-PixelMatrix *cannyOperator(PixelMatrix *, double, double);
+PixelMatrix **cannyOperator(PixelMatrix *, double, double);
 
 
 
