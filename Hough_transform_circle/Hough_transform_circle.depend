@@ -162,3 +162,61 @@
 1481740368 c:\project\advancedcomputerarchitecture\hough_transform_circle\sources\filters.h
 	"convolution.h"
 
+1481842438 source:c:\advancedcomputerarchitecture\hough_transform_circle\sources\convolution.c
+	"convolution.h"
+
+1481842438 c:\advancedcomputerarchitecture\hough_transform_circle\sources\convolution.h
+	"./pixelMatrix.h"
+	<stdlib.h>
+
+1481842438 c:\advancedcomputerarchitecture\hough_transform_circle\sources\pixelmatrix.h
+
+1481842438 source:c:\advancedcomputerarchitecture\hough_transform_circle\sources\imageutilities.c
+	"imageUtilities.h"
+
+1481842438 c:\advancedcomputerarchitecture\hough_transform_circle\sources\imageutilities.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1481886514 source:c:\advancedcomputerarchitecture\hough_transform_circle\sources\pixelmatrix.c
+	"pixelMatrix.h"
+	<stdlib.h>
+
+1481845551 source:c:\advancedcomputerarchitecture\hough_transform_circle\sources\filters.c
+	"filters.h"
+
+1481845551 c:\advancedcomputerarchitecture\hough_transform_circle\sources\filters.h
+	"convolution.h"
+
+1481916768 source:c:\advancedcomputerarchitecture\hough_transform_circle\tests\imagetests.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"./../sources/imageUtilities.h"
+	"./../sources/codeblocks_environment.h"
+	"./../sources/filter.h"
+	"./../sources/filterOperators.h"
+	<cv.h>
+	<highgui.h>
+	<time.h>
+	<cv.h>
+	<highgui.h>
+
+1481842438 c:\advancedcomputerarchitecture\hough_transform_circle\sources\codeblocks_environment.h
+
+1481899620 source:c:\advancedcomputerarchitecture\hough_transform_circle\sources\filter.c
+	"filter.h"
+
+1481842438 c:\advancedcomputerarchitecture\hough_transform_circle\sources\filter.h
+	"./pixelMatrix.h"
+	<stdlib.h>
+
+1481916152 source:c:\advancedcomputerarchitecture\hough_transform_circle\sources\filteroperators.c
+	"filter.h"
+	"filterOperators.h"
+
+1481916044 c:\advancedcomputerarchitecture\hough_transform_circle\sources\filteroperators.h
+	"filter.h"
+	<math.h>
+

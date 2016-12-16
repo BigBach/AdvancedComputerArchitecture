@@ -95,7 +95,7 @@ PixelMatrix *extendsBorders(PixelMatrix *pixelMatrix, int borderSize)
     {
         for(j = 0; j < filterSize; j++)
         {
-            if ((i != borderSize) && (j != borderSize))
+            if ((i != borderSize) || (j != borderSize))
             {
                 outputMatrix->values[i * outputMatrix->width + j] = pixel;
             }
@@ -120,7 +120,7 @@ PixelMatrix *extendsBorders(PixelMatrix *pixelMatrix, int borderSize)
     {
         for(j = 0; j < filterSize; j++)
         {
-            if ((i != borderSize) && (j != borderSize))
+            if ((i != borderSize) || (j != borderSize))
             {
                 outputMatrix->values[i * outputMatrix->width + outputMatrix->width - 1 - j] = pixel;
             }
@@ -129,12 +129,12 @@ PixelMatrix *extendsBorders(PixelMatrix *pixelMatrix, int borderSize)
     }
 
     //Right border
-    for(i = filterSize; i < (outputMatrix->height - filterSize); i++)
+    for(i = filterSize; i < (outputMatrix->height - borderSize); i++)
     {
-        pixel = outputMatrix->values[i * outputMatrix->width + outputMatrix->width - borderSize];
+        pixel = outputMatrix->values[i * outputMatrix->width + outputMatrix->width - filterSize];
         for(j = 0; j < borderSize; j++)
         {
-            outputMatrix->values[i * outputMatrix->width + outputMatrix->width - 1 - j] = pixel;
+            outputMatrix->values[i * outputMatrix->width + outputMatrix->width -1 - j] = pixel;
         }
     }
 
@@ -146,7 +146,7 @@ PixelMatrix *extendsBorders(PixelMatrix *pixelMatrix, int borderSize)
     {
         for(j = 0; j < filterSize; j++)
         {
-            if ((i != borderSize) && (j != borderSize))
+            if ((i != borderSize) || (j != borderSize))
             {
                 outputMatrix->values[(outputMatrix->height -1 - i) * outputMatrix->width + outputMatrix->width - 1 - j] = pixel;
             }
@@ -157,7 +157,7 @@ PixelMatrix *extendsBorders(PixelMatrix *pixelMatrix, int borderSize)
     //Bottom border
     for(j = filterSize; j < (outputMatrix->width - filterSize); j++)
     {
-        pixel = outputMatrix->values[(outputMatrix->height - borderSize) * outputMatrix->width + (outputMatrix->width - 1 - j)];
+        pixel = outputMatrix->values[(outputMatrix->height - 1 - borderSize) * outputMatrix->width + (outputMatrix->width - 1 - j)];
         for(i = 0; i < borderSize; i++)
         {
             outputMatrix->values[(outputMatrix->height - 1 - i) * outputMatrix->width + (outputMatrix->width - 1 - j)] = pixel;
@@ -172,7 +172,7 @@ PixelMatrix *extendsBorders(PixelMatrix *pixelMatrix, int borderSize)
     {
         for(j = 0; j < filterSize; j++)
         {
-            if ((i != borderSize) && (j != borderSize))
+            if ((i != borderSize) || (j != borderSize))
             {
                 outputMatrix->values[(outputMatrix->height - 1 - i) * outputMatrix->width + j] = pixel;
             }
@@ -180,10 +180,10 @@ PixelMatrix *extendsBorders(PixelMatrix *pixelMatrix, int borderSize)
 
     }
 
-    //Right border
-    for(i = filterSize; i < (outputMatrix->height - filterSize); i++)
+    //Left border
+    for(i = filterSize - 1; i < (outputMatrix->height - filterSize); i++)
     {
-        pixel = outputMatrix->values[(outputMatrix->height - 1 - i) * outputMatrix->width + borderSize];
+        pixel = outputMatrix->values[(outputMatrix->height - 1 - i) * outputMatrix->width + filterSize];
         for(j = 0; j < borderSize; j++)
         {
             outputMatrix->values[(outputMatrix->height - 1 - i) * outputMatrix->width + j] = pixel;
