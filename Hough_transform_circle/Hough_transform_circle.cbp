@@ -55,14 +55,14 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="sources/codeblocks_environment.h" />
-		<Unit filename="sources/convolution.c">
+		<Unit filename="sources/filter.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="sources/convolution.h" />
-		<Unit filename="sources/filters.c">
+		<Unit filename="sources/filter.h" />
+		<Unit filename="sources/filterOperators.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="sources/filters.h" />
+		<Unit filename="sources/filterOperators.h" />
 		<Unit filename="sources/imageUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>

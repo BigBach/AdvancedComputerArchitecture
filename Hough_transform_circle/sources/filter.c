@@ -1,4 +1,4 @@
-#include "convolution.h"
+#include "filter.h"
 
 Filter *newFilter(int size){
     Filter *f = (Filter*)malloc(1 * sizeof(Filter));
@@ -32,7 +32,7 @@ PixelMatrix *convolution(PixelMatrix *pixelMatrix, Filter *filter)
         double pixel = 0.0;
         for(j = 0; j < endForJ; j++){
             pixel += pixelMatrix->values[i] * filter->values[j];
-            if(((j + 1) % 3) == 0){
+            if(((j + 1) % filter->size) == 0){
                 i += pixelMatrix->width - (filter->size - 1);
             } else{
                 i++;
